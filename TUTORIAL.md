@@ -206,6 +206,20 @@ We provide a docker image for testing the code.
   4. Run an interactive session `docker run -v YOUR_PATH:YOUR_PATH --runtime=nvidia -i -t your-docker-image:v1.0 /bin/bash`
   5. `cd YOUR_PATH`
   6. `./demo_example1.sh`
+  
+Note: Sometimes axel returns "too many redirects" error when trying to download an image. So its better to copy the content image as `content1.png` and the style image as `style1.png` in the `/home/ishammohamed/FastPhotoStyle/images/` directory. To copy file from the host to container use following command:
+
+`sudo docker cp style1.png 224f:/home/ishammohamed/FastPhotoStyle/images/style1.png` 
+
+224f is the first 4 chars of container id from `sudo docker ps` execution in the host machine. 
+
+After executing this command, make sure the `content1.png` and `style1.png` are in the `images` directory in the container and run `python demo.py` in the container instead of running the demo_example1.sh file.
+
+You can use the same `docker cp` command to copy example1.png file (result) 
+
+To move the file from VM to Windows machine, make sure the machine has Gitbash installed. Open Gitbash in the Windows machine and execute the following:
+
+`scp ishammohamed@40.115.126.210:/home/ishammohamed/example1.png  "C:\fastStylePhotoResults"`
 
 ## Acknowledgement
 
