@@ -2,10 +2,10 @@
 ![Python 2.7](https://img.shields.io/badge/python-2.7-green.svg)
 ![Python 3.5](https://img.shields.io/badge/python-3.5-green.svg)
 
-## Making this work in 2021 using Azure NC Promo VM
+## Making this work in 2021 using Azure NC6 Promo VM
 Modifications to the dockerfile are already availble.
 ### Step 1 - Create an Azure VM resource with following specs
-SKU - NC Promo / NC'
+SKU - NC6 Promo / NC6'
 
 Region - Northern Europe
 
