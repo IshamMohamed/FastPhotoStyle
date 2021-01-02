@@ -25,7 +25,7 @@ Use https://justusnithushan.medium.com/nvidia-docker2-installation-procedure-in-
 ### Step 5 - Ensure things are ok
 Execute  `sudo docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi`
 
-### Step 6 - Follow [tutorial](TUTORIAL.md)
+### Step 6 - Follow [tutorial](TUTORIAL.md#use-docker-image)
 
 ## FastPhotoStyle
 
