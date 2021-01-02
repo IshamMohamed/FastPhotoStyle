@@ -24,8 +24,11 @@ RUN wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh -P /t
 RUN bash /tmp/Anaconda3-5.0.1-Linux-x86_64.sh -b -p $ANACONDA
 RUN rm /tmp/Anaconda3-5.0.1-Linux-x86_64.sh -rf
 RUN conda install -y pytorch=0.4.1 torchvision cuda91 -c pytorch
-RUN conda install -y -c anaconda pip 
-RUN conda install -y -c menpo opencv3
+RUN conda install -y --override-channels -c main pip 
+RUN pip install --upgrade pip
+RUN pip install opencv-python
 RUN pip install scikit-umfpack
 RUN pip install cupy-cuda91
 RUN pip install pynvrtc
+RUN pip uninstall scipy
+RUN pip install scipy==1.2.2
