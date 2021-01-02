@@ -2,6 +2,29 @@
 ![Python 2.7](https://img.shields.io/badge/python-2.7-green.svg)
 ![Python 3.5](https://img.shields.io/badge/python-3.5-green.svg)
 
+## Making this work in 2021 using Azure NC Promo VM
+Modifications to the dockerfile are already availble.
+### Step 1 - Create an Azure VM resource with following specs
+SKU - NC Promo / NC'
+
+Region - Northern Europe
+
+OS - Ubuntu 16.04
+
+Disk - HDD
+
+### Step 2 - Enable GPU Driver in the VM host
+Use https://docs.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
+
+### Step 3 - Install Docker
+Use https://docs.docker.com/engine/install/ubuntu/
+
+### Step 4 - Install Nvidia-Docker 2
+Use https://justusnithushan.medium.com/nvidia-docker2-installation-procedure-in-ubuntu16-04-a9a5d8513cba
+
+### Step 5 - Ensure things are ok
+Execute  `sudo docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi`
+
 ## FastPhotoStyle
 
 ### License
